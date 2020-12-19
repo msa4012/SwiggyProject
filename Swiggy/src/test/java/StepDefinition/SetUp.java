@@ -1,5 +1,7 @@
 package StepDefinition;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -12,7 +14,7 @@ public class SetUp {
 			
 		static WebDriver driver;
 		
-		@Before
+		@BeforeMethod
 		public void SetDriver() {
 			
 			System.out.println("Inside Before ");
@@ -23,6 +25,7 @@ public class SetUp {
 			
 		}
 		
+		@AfterMethod
 		@After("@Search")
 		public void CloseDriver() {
 			
